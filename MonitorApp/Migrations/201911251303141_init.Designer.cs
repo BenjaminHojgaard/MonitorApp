@@ -7,13 +7,13 @@ namespace MonitorApp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class datetimeChangeAgain : IMigrationMetadata
+    public sealed partial class init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(datetimeChangeAgain));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
         
         string IMigrationMetadata.Id
         {
-            get { return "201911251055374_datetimeChangeAgain"; }
+            get { return "201911251303141_init"; }
         }
         
         string IMigrationMetadata.Source

@@ -7,13 +7,13 @@ namespace MonitorApp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class secondMigration : IMigrationMetadata
+    public sealed partial class SeedUsers : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(secondMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(SeedUsers));
         
         string IMigrationMetadata.Id
         {
-            get { return "201911251024218_secondMigration"; }
+            get { return "201911271359540_SeedUsers"; }
         }
         
         string IMigrationMetadata.Source

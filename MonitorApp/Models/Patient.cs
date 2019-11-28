@@ -5,14 +5,15 @@ using System.Web;
 
 namespace MonitorApp.Models
 {
-    public class EndUser
+    public class Patient
     {
         public int Id { get; set; }
+        public string HOT_Id { get; set; }
+        public string HOT_MacAddress { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string Country { get; set; }
-        public string HOT_Id { get; set; }
-        public string HOT_MacAddress { get; set; }
-        public int MyProperty { get; set; }
+        public object HOT_Data { get; set; }
+        public DateTime DateCreated { get; set; }
     }
 }

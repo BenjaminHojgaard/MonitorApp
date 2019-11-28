@@ -214,38 +214,42 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201911251021296_InitialDB.cs" />
-    <Compile Include="Migrations\201911251021296_InitialDB.Designer.cs">
-      <DependentUpon>201911251021296_InitialDB.cs</DependentUpon>
+    <Compile Include="Migrations\201911251303141_init.cs" />
+    <Compile Include="Migrations\201911251303141_init.Designer.cs">
+      <DependentUpon>201911251303141_init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201911251024218_secondMigration.cs" />
-    <Compile Include="Migrations\201911251024218_secondMigration.Designer.cs">
-      <DependentUpon>201911251024218_secondMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201911271359540_SeedUsers.cs" />
+    <Compile Include="Migrations\201911271359540_SeedUsers.Designer.cs">
+      <DependentUpon>201911271359540_SeedUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201911251052012_datetimeChange.cs" />
-    <Compile Include="Migrations\201911251052012_datetimeChange.Designer.cs">
-      <DependentUpon>201911251052012_datetimeChange.cs</DependentUpon>
+    <Compile Include="Migrations\201911272031134_AddedPasswordToMonitorUser.cs" />
+    <Compile Include="Migrations\201911272031134_AddedPasswordToMonitorUser.Designer.cs">
+      <DependentUpon>201911272031134_AddedPasswordToMonitorUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201911251055374_datetimeChangeAgain.cs" />
-    <Compile Include="Migrations\201911251055374_datetimeChangeAgain.Designer.cs">
-      <DependentUpon>201911251055374_datetimeChangeAgain.cs</DependentUpon>
+    <Compile Include="Migrations\201911281502596_addedNewUser.cs" />
+    <Compile Include="Migrations\201911281502596_addedNewUser.Designer.cs">
+      <DependentUpon>201911281502596_addedNewUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201911251120127_changedRoles.cs" />
-    <Compile Include="Migrations\201911251120127_changedRoles.Designer.cs">
-      <DependentUpon>201911251120127_changedRoles.cs</DependentUpon>
+    <Compile Include="Migrations\201911281552116_ChangedApplicationUser.cs" />
+    <Compile Include="Migrations\201911281552116_ChangedApplicationUser.Designer.cs">
+      <DependentUpon>201911281552116_ChangedApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911281557579_ChangedApplicationUserNotMappedField.cs" />
+    <Compile Include="Migrations\201911281557579_ChangedApplicationUserNotMappedField.Designer.cs">
+      <DependentUpon>201911281557579_ChangedApplicationUserNotMappedField.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\EndUser.cs" />
+    <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\MonitorUser.cs" />
-    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\RoleName.cs" />
+    <Compile Include="Models\UserTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Utility\CustomRoles.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -336,20 +340,23 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911251021296_InitialDB.resx">
-      <DependentUpon>201911251021296_InitialDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911251303141_init.resx">
+      <DependentUpon>201911251303141_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911251024218_secondMigration.resx">
-      <DependentUpon>201911251024218_secondMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911271359540_SeedUsers.resx">
+      <DependentUpon>201911271359540_SeedUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911251052012_datetimeChange.resx">
-      <DependentUpon>201911251052012_datetimeChange.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911272031134_AddedPasswordToMonitorUser.resx">
+      <DependentUpon>201911272031134_AddedPasswordToMonitorUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911251055374_datetimeChangeAgain.resx">
-      <DependentUpon>201911251055374_datetimeChangeAgain.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911281502596_addedNewUser.resx">
+      <DependentUpon>201911281502596_addedNewUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911251120127_changedRoles.resx">
-      <DependentUpon>201911251120127_changedRoles.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911281552116_ChangedApplicationUser.resx">
+      <DependentUpon>201911281552116_ChangedApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911281557579_ChangedApplicationUserNotMappedField.resx">
+      <DependentUpon>201911281557579_ChangedApplicationUserNotMappedField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

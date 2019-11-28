@@ -7,13 +7,13 @@ namespace MonitorApp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class changedRoles : IMigrationMetadata
+    public sealed partial class AddedPasswordToMonitorUser : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(changedRoles));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedPasswordToMonitorUser));
         
         string IMigrationMetadata.Id
         {
-            get { return "201911251120127_changedRoles"; }
+            get { return "201911272031134_AddedPasswordToMonitorUser"; }
         }
         
         string IMigrationMetadata.Source

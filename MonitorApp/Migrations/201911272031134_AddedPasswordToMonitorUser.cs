@@ -3,16 +3,16 @@ namespace MonitorApp.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class datetimeChangeAgain : DbMigration
+    public partial class AddedPasswordToMonitorUser : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.MonitorUsers", "DateCreated", c => c.DateTime(nullable: false));
+            AddColumn("dbo.MonitorUsers", "Password", c => c.String());
         }
         
         public override void Down()
         {
-            DropColumn("dbo.MonitorUsers", "DateCreated");
+            DropColumn("dbo.MonitorUsers", "Password");
         }
     }
 }

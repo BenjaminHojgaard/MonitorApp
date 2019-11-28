@@ -7,13 +7,13 @@ namespace MonitorApp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class datetimeChange : IMigrationMetadata
+    public sealed partial class ChangedApplicationUser : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(datetimeChange));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangedApplicationUser));
         
         string IMigrationMetadata.Id
         {
-            get { return "201911251052012_datetimeChange"; }
+            get { return "201911281552116_ChangedApplicationUser"; }
         }
         
         string IMigrationMetadata.Source

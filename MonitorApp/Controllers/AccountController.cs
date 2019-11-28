@@ -336,6 +336,62 @@ namespace MonitorApp.Controllers
             {
                 return GetErrorResult(result);
             }
+            // code for creating admin
+            //var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
+            //var roleManager = new RoleManager<IdentityRole>(roleStore);
+            //await roleManager.CreateAsync(new IdentityRole("CanCreateUsers"));
+            //await UserManager.AddToRoleAsync(user.Id, "CanCreateUsers");
+
+            return Ok();
+        }
+
+        [Authorize(Roles = RoleName.CanCreateUsers)]
+        [Route("RegisterTest")]
+        public async Task<IHttpActionResult> RegisterTest(RegisterBindingModelTest model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email, UserRole = model.UserRole, Country = model.Country };
+
+            IdentityResult result = await UserManager.CreateAsync(user, model.Password);
+
+            if (!result.Succeeded)
+            {
+                return GetErrorResult(result);
+            }
+
+            var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
+            var roleManager = new RoleManager<IdentityRole>(roleStore);
+            switch (model.UserRole)
+            {
+
+                // 0 = admin
+                case UserTypes.Admin:
+                    
+                    await UserManager.AddToRoleAsync(user.Id, RoleName.CanCreateUsers);
+                    break;
+
+                // doctor
+                case UserTypes.Medic:
+                    var testrole = await roleStore.FindByNameAsync(RoleName.CanRequestPermissions);
+                    if (testrole == null)
+                        await roleManager.CreateAsync(new IdentityRole(RoleName.CanRequestPermissions));
+
+                    await UserManager.AddToRoleAsync(user.Id, RoleName.CanRequestPermissions);
+                    break;
+
+                // relative
+                case UserTypes.Relative:
+                    break;
+
+                // patient
+                case UserTypes.Patient:
+                    break;
+            }
+            
 
             return Ok();
         }
