@@ -238,6 +238,10 @@
     <Compile Include="Migrations\201911281557579_ChangedApplicationUserNotMappedField.Designer.cs">
       <DependentUpon>201911281557579_ChangedApplicationUserNotMappedField.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912021246276_Noop.cs" />
+    <Compile Include="Migrations\201912021246276_Noop.Designer.cs">
+      <DependentUpon>201912021246276_Noop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -281,6 +285,7 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <None Include="Properties\PublishProfiles\monitorappdevtest - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -357,6 +362,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911281557579_ChangedApplicationUserNotMappedField.resx">
       <DependentUpon>201911281557579_ChangedApplicationUserNotMappedField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912021246276_Noop.resx">
+      <DependentUpon>201912021246276_Noop.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -23,6 +23,8 @@ namespace MonitorApp.Controllers
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
+
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;
 
@@ -344,6 +346,17 @@ namespace MonitorApp.Controllers
 
             return Ok();
         }
+        
+        [AllowAnonymous]
+        public IEnumerable<ApplicationUser> Get()
+        {
+            List<ApplicationUser> listToReturn = new List<ApplicationUser>();
+            foreach (var item in db.Users)
+            {
+                listToReturn.Add(item);
+            }
+            return listToReturn;
+        }
 
         [Authorize(Roles = RoleName.CanCreateUsers)]
         [Route("RegisterTest")]
@@ -385,11 +398,19 @@ namespace MonitorApp.Controllers
 
                 // relative
                 case UserTypes.Relative:
+                    var testrole2 = await roleStore.FindByNameAsync(RoleName.CanRequestPermission);
+                    if (testrole2 == null)
+                        await roleManager.CreateAsync(new IdentityRole(RoleName.CanRequestPermission));
+
+                    await UserManager.AddToRoleAsync(user.Id, RoleName.CanRequestPermission);
                     break;
 
                 // patient
                 case UserTypes.Patient:
                     break;
+
+                default:
+                    return BadRequest("default case...");
             }
             
 
