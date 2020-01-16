@@ -248,6 +248,7 @@
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\MonitorUser.cs" />
+    <Compile Include="Models\Request.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="Models\UserTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -285,7 +286,12 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <None Include="Properties\PublishProfiles\monitorappdevtest - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\monitorappdevtest - ReadOnly - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\monitorappdevtest - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\monitorappdevtest2 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\monitorappdevtest2 - ReadOnly - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\monitorappdevtest2 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

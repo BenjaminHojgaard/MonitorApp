@@ -47,7 +47,7 @@ namespace MonitorApp.Controllers
             }
         }
 
-        [Authorize(Roles = RoleName.CanCreateUsers)]
+        [AllowAnonymous]
         public async Task<IHttpActionResult> Post([FromBody] MonitorUser user)
         {
             if (!ModelState.IsValid)

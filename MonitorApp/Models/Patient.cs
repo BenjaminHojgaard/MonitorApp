@@ -8,12 +8,12 @@ namespace MonitorApp.Models
     public class Patient
     {
         public int Id { get; set; }
-        public string HOT_Id { get; set; }
+        public string PatientID { get; set; }
         public string HOT_MacAddress { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string Country { get; set; }
+        public string FirstName { get; set; }
+        public DateTime LastMeasurement { get; set; }
         public object HOT_Data { get; set; }
-        public DateTime DateCreated { get; set; }
+        public int CreatedBy { get; set; }
+
     }
 }

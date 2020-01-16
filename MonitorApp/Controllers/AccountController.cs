@@ -338,7 +338,7 @@ namespace MonitorApp.Controllers
             {
                 return GetErrorResult(result);
             }
-            // code for creating admin
+            // code for creating admin we use an SQL script after running this code only once
             //var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
             //var roleManager = new RoleManager<IdentityRole>(roleStore);
             //await roleManager.CreateAsync(new IdentityRole("CanCreateUsers"));
@@ -358,7 +358,7 @@ namespace MonitorApp.Controllers
             return listToReturn;
         }
 
-        [Authorize(Roles = RoleName.CanCreateUsers)]
+        [AllowAnonymous]
         [Route("RegisterTest")]
         public async Task<IHttpActionResult> RegisterTest(RegisterBindingModelTest model)
         {
@@ -375,22 +375,14 @@ namespace MonitorApp.Controllers
             {
                 return GetErrorResult(result);
             }
-
             var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
             var roleManager = new RoleManager<IdentityRole>(roleStore);
             switch (model.UserRole)
             {
-
-                // 0 = admin
-                case UserTypes.Admin:
-                    
-                    await UserManager.AddToRoleAsync(user.Id, RoleName.CanCreateUsers);
-                    break;
-
                 // doctor
                 case UserTypes.Medic:
-                    var testrole = await roleStore.FindByNameAsync(RoleName.CanRequestPermissions);
-                    if (testrole == null)
+                    var medicRole = await roleStore.FindByNameAsync(RoleName.CanRequestPermissions);
+                    if (medicRole == null)
                         await roleManager.CreateAsync(new IdentityRole(RoleName.CanRequestPermissions));
 
                     await UserManager.AddToRoleAsync(user.Id, RoleName.CanRequestPermissions);
@@ -398,22 +390,16 @@ namespace MonitorApp.Controllers
 
                 // relative
                 case UserTypes.Relative:
-                    var testrole2 = await roleStore.FindByNameAsync(RoleName.CanRequestPermission);
-                    if (testrole2 == null)
+                    var relativeRole = await roleStore.FindByNameAsync(RoleName.CanRequestPermission);
+                    if (relativeRole == null)
                         await roleManager.CreateAsync(new IdentityRole(RoleName.CanRequestPermission));
 
                     await UserManager.AddToRoleAsync(user.Id, RoleName.CanRequestPermission);
                     break;
 
-                // patient
-                case UserTypes.Patient:
-                    break;
-
                 default:
                     return BadRequest("default case...");
             }
-            
-
             return Ok();
         }
 
